@@ -1,0 +1,50 @@
+.documento{
+    margin-top: 5%;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 50px;
+    border-radius: 3%;
+    background-color: white;
+}
+
+#derecha{
+    /* padding-left: 10px; */
+    margin-top: 50px;
+    
+}
+#classrow{
+    max-width: 66%;
+}
+
+.list-group{
+    max-height: 1200px;
+    margin-bottom: 10px;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    display: none;
+    }
+/* #formulario1{
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 5%;
+    min-height: 500px ;
+    border-radius: 2%;
+    background-color: white;
+    box-shadow: 0px 0px 3px 1px black;
+} */
+
+#cardnavbar{
+    padding: 5%;
+    font-size: 0.65rem;
+}
+#ids{
+    margin-bottom: 5%;
+}
+p{
+    margin: 0;
+}
+#titlecard{
+    margin-top: 1%;
+    font-size: 1rem;
+}

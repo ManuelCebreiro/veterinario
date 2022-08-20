@@ -1,0 +1,19 @@
+#formulariologin{
+    width: 66%;
+    padding: 50px;
+    background-color: rgb(228, 228, 228);
+}
+
+#formlogin{
+    width: 60%;
+    padding: 30px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 17%;
+    height: 500px;
+    border-radius: 2%;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 0px 3px 1px rgb(172, 39, 39);
+
+}

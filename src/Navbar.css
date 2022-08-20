@@ -1,0 +1,15 @@
+#contenidonavbar {
+    padding-left: 75px;
+    margin-top: 45px;
+    text-align: center;
+}
+
+#imgperfil {
+
+
+    background-color: #333;
+    color: #ddd;
+    font-size: 1.2em;
+    box-shadow: 0 0 40px #03f;
+
+}

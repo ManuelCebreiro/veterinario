@@ -1,0 +1,9 @@
+#formulario1{
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 5%;
+    min-height: 500px ;
+    border-radius: 2%;
+    background-color: white;
+    box-shadow: 0px 0px 3px 1px black;
+}
