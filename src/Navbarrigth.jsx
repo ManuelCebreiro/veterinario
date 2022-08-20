@@ -1,15 +1,20 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Context } from "./store/appContext";
 import "./Navbarrigth.css";
 
-
 function Navbarrigth() {
 
-    const { store, actions } = useContext(Context);
+    const {store, actions} = useContext(Context);
+    const [list, setList] = useState();
+
+    useEffect(() => {
+        console.log("useEffect Ejecutado")
+        console.log(store.datos)
+        setList(generateList)
+    }, [store.datos]) 
 
     const generateList = () => {
-        console.log(store.datos)
-        return store.datos.map((dato, index) => {
+        return store.datos?.map((dato, index) => {
             return (
                 <li key={index} id="ids">
                     <div className="card" id="cardnavbar">
@@ -45,10 +50,9 @@ function Navbarrigth() {
     return (
 
         <div id="classrow" className="col-2 bg-dark">
-
             <div id="derecha" className="d-flex flex-column justify-content-center pe-3 ps-3">
                 <ul className="list-group list-unstyled">
-                    { generateList()}
+                    {list}
                 </ul>
             </div>
         </div>
