@@ -169,7 +169,7 @@ function BodyForm(props) {
 {/* Input del area de texto de comentario */}
                 </div>
                 <button type="button" className="btn btn-success" onClick={(e)=>{
-                actions.getDatos(inputs);  
+                actions.setDatos(inputs);  
                 setInputs(" ")
                 }}>Enviar</button> 
             </div>

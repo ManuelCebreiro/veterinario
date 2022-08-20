@@ -23,8 +23,9 @@ function App(props) {
   return (
     <div className="row">
       
-      <Navbar/>
+     
       <BrowserRouter>
+      <Navbar/>
             <Routes>
                 <Route exact path="/" element={<BodyForm/>} />
                 <Route exact path="/about" element={<BodyAjustes/>} />
@@ -33,9 +34,11 @@ function App(props) {
                 <Route exact path="/pacientes" element={<BodyPacientes/>} />
                 <Route exact path="/login" element={<Login/>} />
             </Routes>
+            <NavbarRigth/>
+            <Navbardown/>
         </BrowserRouter>
-      <NavbarRigth/>
-      <Navbardown/>
+      
+      
     </div>
   );
 }
