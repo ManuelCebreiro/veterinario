@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 function Navbar() {
-    return ( 
+    return (
         <div className="col-2 p-0 bg-dark">
             <div>
                 <div id="contenidonavbar">
@@ -14,27 +14,29 @@ function Navbar() {
                         </a>
                         <ul className="nav nav-pills flex-column align-items-center align-items-sm-start mb-5" id="menu">
                             <li className="nav-item">
-                                {/* <Link to="/"> */}
-                                <a href="/" className="nav-link align-middle px-0">
+                                <Link to="/" className="nav-link align-middle px-0">
                                     <i className="fs-3 bi-house text-white"></i> <span className="ms-2 fs-5 d-none d-sm-inline text-white">Home</span>
-                                </a>
-                                {/* </Link> */}
+                                </Link>
                             </li>
                             <li>
-                                <a href="/informes" className="nav-link px-0 align-middle">
-                                    <i className="fs-3 bi-speedometer2 text-white"></i> <span className="ms-1 fs-5 d-none d-sm-inline text-white">Informes</span> </a>
+                                <Link to="/informes" className="nav-link px-0 align-middle">
+                                    <i className="fs-3 bi-speedometer2 text-white"></i> <span className="ms-1 fs-5 d-none d-sm-inline text-white">Informes</span>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/worker" className="nav-link px-0 align-middle">
-                                <i className="fs-3 bi bi-file-person text-white"></i> <span className="ms-2 fs-5 d-none d-sm-inline text-white">Empleados</span></a> 
+                                <Link to="/worker" className="nav-link px-0 align-middle">
+                                    <i className="fs-3 bi bi-file-person text-white"></i> <span className="ms-2 fs-5 d-none d-sm-inline text-white">Empleados</span>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/about" className="nav-link px-0 align-middle">
-                                <i className="fs-3 bi bi-gear text-white"></i><span className="ms-2 fs-5 d-none d-sm-inline text-white">Ajustes</span></a> 
+                                <Link to="/about" className="nav-link px-0 align-middle">
+                                    <i className="fs-3 bi bi-gear text-white"></i><span className="ms-2 fs-5 d-none d-sm-inline text-white">Ajustes</span>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/pacientes" className="nav-link px-0 align-middle">
-                                    <i class="fs-3 bi-people text-white"></i> <span className="ms-2 fs-5 d-none d-sm-inline text-white">Pacientes</span> </a>
+                                <Link to="/pacientes" className="nav-link px-0 align-middle">
+                                    <i class="fs-3 bi-people text-white"></i> <span className="ms-2 fs-5 d-none d-sm-inline text-white">Pacientes</span>
+                                </Link>
                             </li>
                         </ul>
                         <hr />
@@ -47,7 +49,7 @@ function Navbar() {
                                 <li><a className="dropdown-item" href="#">Inicio jornada</a></li>
                                 <li><a className="dropdown-item" href="#">Fin jornada</a></li>
                                 <li><a className="dropdown-item" href="/worker">Perfil</a></li>
-                                
+
                                 <li>
                                     <hr className="dropdown-divider" />
                                 </li>
