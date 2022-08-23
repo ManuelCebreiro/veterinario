@@ -171,7 +171,7 @@ function BodyForm(props) {
                 }}>Enviar</button>
             </div>
 
-            <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.mot} sex={inputs.sex} />
+            <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.motive} sex={inputs.sex} />
             {/* <Navbarrigth name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.mot} sex={inputs.sex} /> */}
 
         </div>
