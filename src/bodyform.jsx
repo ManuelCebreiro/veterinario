@@ -169,9 +169,11 @@ function BodyForm(props) {
 {/* Input del area de texto de comentario */}
                 </div>
                 <button type="button" className="btn btn-success" onClick={(e)=>{
+                    // if( inputs.textarea != "" && inputs.name != "" && inputs.lastname != "" && inputs.pet != "" && inputs.age != "" && inputs.type != "" && inputs.motive != "" && inputs.sex != ""){
                 actions.getDatos(inputs);  
                 setInputs(" ")
-                }}>Enviar</button> 
+                                // }else alert("Faltan campos por cubrir.")
+                                                }}>Enviar</button> 
             </div>
 
             <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.mot} sex={inputs.sex}/>
