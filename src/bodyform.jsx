@@ -10,9 +10,9 @@ import { Context } from "./store/appContext";
 function BodyForm(props) {
 
     const { store, actions } = useContext(Context);
-    const [inputs, setInputs] = useState({ name: "", lastname: "", pet: "", type: "", age: "", sex: "", motive: "", textarea: "" })
+    const [inputs, setInputs] = useState({ name: "", lastname: "", pet: "", type: "", age: "", sex: null, motive: "", textarea: "" })
     const handleinputs = (e) => {
-        setInputs({ ...inputs,  [e.target.name]: e.target.value })
+        setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
 
     let fecha = new Date();
@@ -112,7 +112,7 @@ function BodyForm(props) {
                     </div>
                     {/* Input de la edad de la mascota */}
 
-                    <div className="col">
+                    {/* <div className="col">
                         <input type="text"
                             value={inputs.sex} onChange={(e) => handleinputs(e)}
                             name="sex"
@@ -126,8 +126,25 @@ function BodyForm(props) {
                                 }
                             }}
                             className="form-control" placeholder="Sexo" />
-                    </div>
+                    </div> */}
                     {/* Input del sexo de la mascota */}
+                    <div class="col-md-2">
+                        <select class="form-select"
+                            value={inputs.sex} onChange={(e) => handleinputs(e)}
+                            name="sex"
+                            onClick={(e) => {
+                                if (e.target.value == "Macho") {
+                                    setInputs.sex({ ...inputs.sex, sex: true });
+                                } else if (e.target.value == "Hembra") {
+                                    setInputs.sex({ ...inputs.sex, sex: false });
+
+                                }
+                            }}
+                        >   <option>Sexo</option>
+                            <option>Macho</option>
+                            <option>Hembra</option>
+                        </select>
+                    </div>
 
                     <div className="col">
                         <input type="text"
@@ -166,10 +183,11 @@ function BodyForm(props) {
                     {/* Input del area de texto de comentario */}
                 </div>
                 <button type="button" className="btn btn-success" onClick={(e) => {
-                    if( inputs.textarea != "" && inputs.name != "" && inputs.lastname != "" && inputs.pet != "" && inputs.age != "" && inputs.type != "" && inputs.motive != "" && inputs.sex != ""){
-                    actions.setDatos(inputs);
-                    setInputs({ name: "", lastname: "", pet: "", type: "", age: "", sex: "", motive: "", textarea: "" })
-                }}}>Enviar</button>
+                    if (inputs.textarea != "" && inputs.name != "" && inputs.lastname != "" && inputs.pet != "" && inputs.age != "" && inputs.type != "" && inputs.motive != "" && inputs.sex != "") {
+                        actions.setDatos(inputs);
+                        setInputs({ name: "", lastname: "", pet: "", type: "", age: "", sex: "", motive: "", textarea: "" })
+                    }else alert("Tienes que rellenar todos los campos.")
+                }}>Enviar</button>
             </div>
 
             <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.motive} sex={inputs.sex} />
