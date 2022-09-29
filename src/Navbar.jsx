@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <div className="col-2 p-0 bg-dark">
-            <div>
+         
                 <div id="contenidonavbar">
                     <div className="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100">
                         <a href="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -42,7 +42,7 @@ function Navbar() {
                         <hr />
                         <div className="dropdown pb-4 ml-6">
                             <a href="#" className="align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img id="imgperfil" src="https://m.media-amazon.com/images/I/519f8CbN8vL._SX450_.jpg" alt="hugenerd" width="140" height="140" className="rounded-circle mb-3" />
+                                <img id="imgperfil" src="https://m.media-amazon.com/images/I/519f8CbN8vL._SX450_.jpg" alt="hugenerd" width="max-width: 140%" height="auto" className="img-fluid rounded-circle mb-3" />
                                 <span className="d-none d-sm-block mx-1 ">Trabajador</span>
                             </a>
                             <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -83,7 +83,7 @@ function Navbar() {
                     </div>
                 </div>
 
-            </div>
+            
         </div>
     );
 }

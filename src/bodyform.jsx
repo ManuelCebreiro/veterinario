@@ -22,7 +22,10 @@ function BodyForm(props) {
 
         <div id="contenidoform" className="col-7">
             <div id="formulario">
-                <div><p>{dateactual}</p></div> FECHA ACTUAL
+                <div className="row">
+                <div className="col-9"></div>
+                <div className="col-3">{dateactual}</div>
+                </div>
                 <h1 className="text-center">Informe</h1>
                 <div className="row">
                     <div className="col mb-4">
