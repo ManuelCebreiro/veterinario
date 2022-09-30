@@ -1,4 +1,4 @@
-import React,{ useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import './bodyform.css';
 import Documentdown from "./Documentdown";
 import Navbarrigth from "./Navbarrigth";
@@ -10,22 +10,22 @@ import { Context } from "./store/appContext";
 function BodyForm(props) {
 
     const { store, actions } = useContext(Context);
-    const [inputs, setInputs] = useState({name:"", lastname:"", pet:"", type:"", age:"", sex:"", motive:""})
-    const handleinputs= (e)=>{
-    setInputs({...inputs, [e.target.name]:e.target.value})
+    const [inputs, setInputs] = useState({ name: "", lastname: "", pet: "", type: "", age: "", sex: null, motive: "", textarea: "" })
+    const handleinputs = (e) => {
+        setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
-
 
     let fecha = new Date();
     let dateactual = String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMonth() + 1).padStart(2, '0') + '/' + fecha.getFullYear();
 
     return (
 
-
-
         <div id="contenidoform" className="col-7">
             <div id="formulario">
-                <div><p>{dateactual}</p></div> FECHA ACTUAL
+                <div className="row">
+                <div className="col-9"></div>
+                <div className="col-3">{dateactual}</div>
+                </div>
                 <h1 className="text-center">Informe</h1>
                 <div className="row">
                     <div className="col mb-4">
@@ -39,7 +39,7 @@ function BodyForm(props) {
 
                             className="form-control" placeholder="Nombre" aria-label="First name" />
                     </div>
-{/* Input de nombre del cliente*/}
+                    {/* Input de nombre del cliente*/}
 
                     <div className="col">
                         <input type="text"
@@ -57,7 +57,7 @@ function BodyForm(props) {
                             className="form-control" placeholder="Apellido" aria-label="Last name" />
                     </div>
                 </div>
-{/* Input con apellido del cliente */}
+                {/* Input con apellido del cliente */}
 
                 <div className="row">
                     <div className="col mb-4">
@@ -76,12 +76,12 @@ function BodyForm(props) {
 
                             className="form-control" placeholder="Nombre mascota" />
                     </div>
-{/* Input con nombre de la mascota */}
+                    {/* Input con nombre de la mascota */}
 
                     <div className="col">
                         <input type="text"
                             value={inputs.type} onChange={(e) => handleinputs(e)}
-                            name= "type"
+                            name="type"
                             onKeyDown={(e) => {
                                 let array = Array.from(e.target.value)
                                 let filterArray = array.filter(words => words !== " ");
@@ -94,7 +94,7 @@ function BodyForm(props) {
 
                             className="form-control" placeholder="Tipo de mascota" />
                     </div>
-{/* Input del tipo de mascota */}
+                    {/* Input del tipo de mascota */}
 
                     <div className="col">
                         <input type="number"
@@ -106,16 +106,16 @@ function BodyForm(props) {
 
                                 if (e.key === "Enter" && filterArray.length) {
                                     setInputs.age([...inputs.age, e.target.value]);
-                                
+
                                 }
-                                
+
                             }}
 
                             className="form-control" placeholder="Edad mascota" />
                     </div>
-{/* Input de la edad de la mascota */}
+                    {/* Input de la edad de la mascota */}
 
-                    <div className="col">
+                    {/* <div className="col">
                         <input type="text"
                             value={inputs.sex} onChange={(e) => handleinputs(e)}
                             name="sex"
@@ -129,8 +129,25 @@ function BodyForm(props) {
                                 }
                             }}
                             className="form-control" placeholder="Sexo" />
+                    </div> */}
+                    {/* Input del sexo de la mascota */}
+                    <div class="col-md-2">
+                        <select class="form-select"
+                            value={inputs.sex} onChange={(e) => handleinputs(e)}
+                            name="sex"
+                            onClick={(e) => {
+                                if (e.target.value == "Macho") {
+                                    setInputs.sex({ ...inputs.sex, sex: true });
+                                } else if (e.target.value == "Hembra") {
+                                    setInputs.sex({ ...inputs.sex, sex: false });
+
+                                }
+                            }}
+                        >   <option>Sexo</option>
+                            <option>Macho</option>
+                            <option>Hembra</option>
+                        </select>
                     </div>
-{/* Input del sexo de la mascota */}
 
                     <div className="col">
                         <input type="text"
@@ -147,8 +164,8 @@ function BodyForm(props) {
                             }}
                             className="form-control" placeholder="Motivo visita" />
                     </div>
-                    
-{/* Input del motivo de la visita^^^^ */}
+
+                    {/* Input del motivo de la visita^^^^ */}
 
                     <div className="mb-3 text-center">
                         <label for="exampleFormControlTextarea1" className="form-label"><h6>Comentario para el veterinario</h6></label>
@@ -166,17 +183,17 @@ function BodyForm(props) {
                             }}
                             className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-{/* Input del area de texto de comentario */}
+                    {/* Input del area de texto de comentario */}
                 </div>
-                <button type="button" className="btn btn-success" onClick={(e)=>{
-                    // if( inputs.textarea != "" && inputs.name != "" && inputs.lastname != "" && inputs.pet != "" && inputs.age != "" && inputs.type != "" && inputs.motive != "" && inputs.sex != ""){
-                actions.getDatos(inputs);  
-                setInputs(" ")
-                                // }else alert("Faltan campos por cubrir.")
-                                                }}>Enviar</button> 
+                <button type="button" className="btn btn-success" onClick={(e) => {
+                    if (inputs.textarea != "" && inputs.name != "" && inputs.lastname != "" && inputs.pet != "" && inputs.age != "" && inputs.type != "" && inputs.motive != "" && inputs.sex != "") {
+                        actions.setDatos(inputs);
+                        setInputs({ name: "", lastname: "", pet: "", type: "", age: "", sex: "", motive: "", textarea: "" })
+                    }else alert("Tienes que rellenar todos los campos.")
+                }}>Enviar</button>
             </div>
 
-            <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.mot} sex={inputs.sex}/>
+            <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.motive} sex={inputs.sex} />
             {/* <Navbarrigth name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.mot} sex={inputs.sex} /> */}
 
         </div>

@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import './App.css';
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Navbar from './Navbar';
 import NavbarRigth from './Navbarrigth';
 import BodyForm from './bodyform';
@@ -16,26 +16,26 @@ import injectContext from "./store/appContext";
 
 
 
-function App(props) {
-	const [isStarter, setIsStarter] = useState(false);
+function App() {
+  const [isStarter, setIsStarter] = useState(false);
 
+  const basename = process.env.BASENAME || "";
 
   return (
     <div className="row">
-      
-      <Navbar/>
-      <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={<BodyForm/>} />
-                <Route exact path="/about" element={<BodyAjustes/>} />
-                <Route exact path="/worker" element={<Worker/>} />
-                <Route exact path="/informes" element={<BodyInformes/>} />
-                <Route exact path="/pacientes" element={<BodyPacientes/>} />
-                <Route exact path="/login" element={<Login/>} />
-            </Routes>
-        </BrowserRouter>
-      <NavbarRigth/>
-      <Navbardown/>
+      <BrowserRouter basename={basename}>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<BodyForm />} />
+          <Route exact path="/about" element={<BodyAjustes />} />
+          <Route exact path="/worker" element={<Worker />} />
+          <Route exact path="/informes" element={<BodyInformes />} />
+          <Route exact path="/pacientes" element={<BodyPacientes />} />
+          <Route exact path="/login" element={<Login />} />
+        </Routes>
+        <NavbarRigth />
+        <Navbardown />
+      </BrowserRouter>
     </div>
   );
 }

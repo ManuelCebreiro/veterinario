@@ -29,25 +29,26 @@ function BodyInformes(props) {
                         </div>
                     </div>
                     <div className="row">
-                        <ul className="list-group list-unstyled">
-                            {/* {misdatos.map((dato, index) => {
+                        <br></br>
+                        <ul className="list-group list-unstyled" id="list-group">
+                            {misdatos.map((dato, index) => {
                                 return (
-                                    <li key={index} id="ids"> */}
-                                        <div className="card" id="cardnavbarinfor">
+                                    <li key={index} id="ids">
+                                        <div className="card" id="cardnavbarinfor2">
                                             <button
                                                 type="button"
                                                 className="btn-close "
                                                 onClick={() => actions.setborrarfavorito()}></button>
 
                                             <h5 className="text-center" id="titlecard">Informe paciente </h5>
-                                            <p>Nombre cliente: <strong></strong></p>
-                                            <p>Nombre paciente: <strong></strong></p>
-                                            <p>Especie:<strong></strong></p>
-                                            <p>Edad:<strong></strong> años.</p>
-                                            <p>Sexo:<strong></strong>.</p>
-                                            <p>Motivo consulta:<strong></strong></p>
+                                            <p>Nombre cliente: <strong>{dato.name}</strong></p>
+                                            <p>Nombre paciente: <strong>{dato.pet}</strong></p>
+                                            <p>Especie:<strong></strong>{dato.type}</p>
+                                            <p>Edad:<strong>{dato.age}</strong> años.</p>
+                                            <p>Sexo:<strong> {dato.sex}</strong>.</p>
+                                            <p>Motivo consulta: <strong>{dato.motive}</strong></p>
                                             <p className="text-center"><strong>EVALUACIÓN INICIAL</strong><br />
-                                              
+
                                             </p>
                                             <p className="text"><strong>DIAGNÓSTICO</strong><br />
                                                 TEXTO QUE SE COMPLETA DESPUES DE CONSULTAR
@@ -58,10 +59,10 @@ function BodyInformes(props) {
                                                 <p>Número de teléfono</p>
                                             </div>
                                         </div>
-                                    {/* </li> */}
-                                {/* )
-                            })} */}
-                            
+                                    </li>
+                                )
+                            })}
+
                         </ul>
                     </div>
                 </div>
