@@ -3,7 +3,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-            datos : []
+            datos : [],
+			isStarter : true
 		},
 		actions:
 		{
