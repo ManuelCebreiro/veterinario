@@ -21,19 +21,10 @@ function BodyForm(props) {
 
     const [isStarter, setIsStarter] = useState(true)
     let changeInform = () => {
-        
+
         setIsStarter(!isStarter == true )
         console.log("Estas dando", isStarter)
     }
-    // const disable = ()=>{
-    //     if(isStarter == true){
-    //     btn.style.display = "none"}
-    // }
-    // const able =() =>{
-    //     btn.style.display !== "none"
-
-    // }
-
     let fecha = new Date();
     let dateactual = String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMonth() + 1).padStart(2, '0') + '/' + fecha.getFullYear();
 
@@ -54,7 +45,6 @@ function BodyForm(props) {
             
 
             </div>
-            {isStarter ?
                 <div id="formulario">
                     <div className="row">
                         <div className="col-9"></div>
@@ -214,10 +204,10 @@ function BodyForm(props) {
                     </button>
                 </div>
 
-                :
+                
 
                 <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.motive} sex={inputs.sex} funcion={setIsStarter} />
-            }
+            
 
         </div>
     );
