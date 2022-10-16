@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import './bodyform.css';
 import Documentdown from "./Documentdown";
-import Navbarrigth from "./Navbarrigth";
 import { Context } from "./store/appContext";
 
 
@@ -15,40 +14,19 @@ function BodyForm(props) {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
 
-    let btn = document.querySelector(".btnstyleinform")
-
-  
-
-    const [isStarter, setIsStarter] = useState(true)
-    let changeInform = () => {
-
-        setIsStarter(!isStarter == true )
-        console.log("Estas dando", isStarter)
-    }
+ 
     let fecha = new Date();
     let dateactual = String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMonth() + 1).padStart(2, '0') + '/' + fecha.getFullYear();
 
     return (
 
         <div id="contenidoform" className="col-7">
-            <div className="row float-end py-3 px-3">
-                <button onClick={(e) => {changeInform()}
-                }
-                    className="btnstyleinform"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-
-                    </svg>
-                </button>
-            
-
+            <div className="row float-end py-3 px-3">          
             </div>
                 <div id="formulario">
                     <div className="row">
-                        <div className="col-9"></div>
-                        <div className="col-3">{dateactual}</div>
+                        <div className="col-lg-10 col-md-8 col-sm-8"></div>
+                        <div className="col-lg-2 col-md-4 col-sm-4">{dateactual}</div>
                     </div>
                     <h1 className="text-center">Informe</h1>
                     <div className="row">
@@ -142,9 +120,9 @@ function BodyForm(props) {
                                 value={inputs.sex} onChange={(e) => handleinputs(e)}
                                 name="sex"
                                 onClick={(e) => {
-                                    if (e.target.value == "Macho") {
+                                    if (e.target.value ==="Macho") {
                                         setInputs.sex({ ...inputs.sex, sex: true });
-                                    } else if (e.target.value == "Hembra") {
+                                    } else if (e.target.value === "Hembra") {
                                         setInputs.sex({ ...inputs.sex, sex: false });
 
                                     }
@@ -192,21 +170,17 @@ function BodyForm(props) {
                         {/* Input del area de texto de comentario */}
                     </div>
                     <button type="button" className="btn btn-success me-3 float-start" onClick={(e) => {
-                        if (inputs.textarea != "" && inputs.name != "" && inputs.lastname != "" && inputs.pet != "" && inputs.age != "" && inputs.type != "" && inputs.motive != "" && inputs.sex != "") {
+                        if (inputs.textarea !== "" && inputs.name !== "" && inputs.lastname !== "" && inputs.pet !== "" && inputs.age !== "" && inputs.type !== "" && inputs.motive !== "" && inputs.sex !== "") {
                             actions.setDatos(inputs);
                             setInputs({ name: "", lastname: "", pet: "", type: "", age: "", sex: "", motive: "", textarea: "" })
                         } else alert("Tienes que rellenar todos los campos.")
                     }}>Enviar</button>
-                    <button type="button" className="btn btn-info float-end" onClick={(e)=>{
-                        {changeInform()}
-                    }}>
-                        Ver Informe
-                    </button>
+                    
                 </div>
 
                 
 
-                <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.motive} sex={inputs.sex} funcion={setIsStarter} />
+                <Documentdown name={inputs.name} lastname={inputs.lastname} textarea={inputs.textarea} namepet={inputs.pet} typepet={inputs.type} agepet={inputs.age} motive={inputs.motive} sex={inputs.sex}/>
             
 
         </div>

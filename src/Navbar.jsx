@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
-        <div className="col-2 p-0 bg-dark pt-4 p-3">
+        <div className="col-2 p-0 bg-dark pt-5 p-3">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid mx-4 ">
                     {/* <div id="contenidonavbar"> */}
                         <div className="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100">
                             <Link to="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                                <span className="fs-5 d-none d-sm-inline">Empresa</span>
+                                <span className="fs-4 d-none d-sm-inline">Empresa</span>
                             </Link>
                             <ul className="nav nav-pills flex-column align-items-center align-items-sm-start mb-5" id="menu">
                                 <li className="nav-item">
@@ -41,12 +41,15 @@ function Navbar() {
                                 </li>
                             </ul>
                             <hr />
-                            <div className="dropdown pb-4 ml-6">
-                                <a href="#" className="align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div className=" pb-4 ml-6">
+                                <a href="#" className="align-items-center text-white text-decoration-none" 
+                                // id="dropdownUser1" 
+                                // data-bs-toggle="dropdown" 
+                                aria-expanded="false">
                                     <img id="imgperfil" src="https://m.media-amazon.com/images/I/519f8CbN8vL._SX450_.jpg" alt="hugenerd" width="max-width: 140%" height="auto" className="img-fluid rounded-circle mb-3" />
-                                    <span className="d-none d-sm-block mx-1 ">Trabajador</span>
+                                    {/* <span className="d-none d-sm-block mx-1 ">Trabajador</span> */}
                                 </a>
-                                <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
+                                {/* <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
                                     <li><a className="dropdown-item" href="#">Inicio jornada</a></li>
                                     <li><a className="dropdown-item" href="#">Fin jornada</a></li>
                                     <li><a className="dropdown-item" href="/worker">Perfil</a></li>
@@ -55,7 +58,7 @@ function Navbar() {
                                         <hr className="dropdown-divider" />
                                     </li>
                                     <li><a className="dropdown-item" href="#">Cerrar sesión</a></li>
-                                </ul>
+                                </ul> */}
                                 <div>
                                     <ul className="nav nav-pills flex-column align-items-center align-items-sm-start mt-3">
                                         <li className="nav-item">

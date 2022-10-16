@@ -2,6 +2,7 @@
 import React, { useContext } from "react"
 import { Context } from "./store/appContext";
 import './informes.css';
+import Documentdown from "./Documentdown";
 
 
 
@@ -14,15 +15,16 @@ function BodyInformes(props) {
     return (
 
         <div id="contenidoform" className="col-7">
-            <div id="formulario2">
+            <div id="">
                 {/* <div><p>{output}</p></div> FECHA ACTUAL*/}
                 <div class="jumbotron">
-                    <h1 class="display-4">INFORMES</h1>
-                    <p class="lead">Hemos habilitado unas pequeñas opciones, para que puedas ver tus informes</p>
+                    <div className="row text-center"><h1 class="display-4">INFORMES</h1></div>
+                    <div className="row text-center"><p class="lead">Hemos habilitado unas pequeñas opciones, para que puedas ver tus informes</p></div>
                     <hr class="my-4" />
                     <div className="row">
+                     
                         <div class="input-group rounded">
-                            <input type="search" class="form-control rounded" placeholder="Buscar informe por nombre" aria-label="Search" aria-describedby="search-addon" />
+                            <input type="search" class="form-control rounded" placeholder="Buscar informe por nombre del cliente" aria-label="Search" aria-describedby="search-addon" />
                             <span class="input-group-text border-0" id="search-addon">
                                 <i class="bi bi-search"></i>
                             </span>
@@ -34,7 +36,7 @@ function BodyInformes(props) {
                             {misdatos.map((dato, index) => {
                                 return (
                                     <li key={index} id="ids">
-                                        <div className="card" id="cardnavbarinfor2">
+                                        {/* <div className="card" id="cardnavbarinfor2">
                                             <button
                                                 type="button"
                                                 className="btn-close "
@@ -58,8 +60,11 @@ function BodyInformes(props) {
                                                 <p>Titulacion empleado</p>
                                                 <p>Número de teléfono</p>
                                             </div>
-                                        </div>
+                                        </div> */}
+                                        <Documentdown name={dato.name} lastname={dato.lastname} textarea={dato.textarea} namepet={dato.pet} typepet={dato.type} agepet={dato.age} motive={dato.motive} sex={dato.sex}/>
+
                                     </li>
+
                                 )
                             })}
 

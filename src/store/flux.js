@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
             datos : [],
-			isStarter : true
+			datosPaciente: []
 		},
 		actions:
 		{

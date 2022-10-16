@@ -8,8 +8,8 @@ function Documentdown({ name, lastname, textarea, namepet, typepet, agepet, moti
         <div id="formulario1" className="block">
             <h3 className="text-center">Informe paciente {namepet}</h3>
             <br />
-            <p>Nombre cliente: <strong>{name} {lastname}</strong></p>
-            <p>Nombre paciente: <strong>{namepet}</strong></p>
+            <div className="row"><p>Nombre cliente: <strong>{name} {lastname}</strong></p></div>
+            <div className="row"><p>Nombre paciente: <strong>{namepet}</strong></p></div>
             <p>Especie:<strong>{typepet}</strong></p>
             <p>Edad:<strong>{agepet}</strong> años.</p>
             <p>Sexo:<strong>{sex}</strong>.</p>
@@ -18,8 +18,7 @@ function Documentdown({ name, lastname, textarea, namepet, typepet, agepet, moti
                 {textarea}
             </p>
             <p className="text"><strong>DIAGNÓSTICO</strong><br />
-                TEXTO QUE SE COMPLETA DESPUES DE CONSULTAR
-            </p>
+                Apartado para el diagnóstico            </p>
             <div className="text-center">
                 <p>Nombre y apellidos veterinario</p>
                 <p>Titulacion empleado</p>
